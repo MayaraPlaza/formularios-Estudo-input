@@ -1,0 +1,312 @@
+<!--
+    <imput>
+        - um dos mais usados em formularios
+        - aceita os mais diversos tipos de dados para
+        - um dos mais poderosos e complexos
+
+        Atributos
+        -type
+        -name
+        -id
+
+        date - data
+        number - somente numeros
+        email - email 
+        password - senha 
+
+ex: 
+<input type="password"> 
+-->
+
+
+
+<!-- <input> Atributos comuns
+
+- autocomplete 
+- autofocus - um por pagina, o cursor vai pro formulario (foco)
+- disable - não entra valor (texto fica com aspecto opaco) 
+- readonly - não entra valor (não fica opaco) (quase todos)
+- value - informa valor 
+- form - para linkar (quase todos)
+- name - não
+- required (quase todos) - OBRIGATORIO preencher campos *
+
+- Placeholder (password, search, tel, text, url) (quase todos)
+
+for tem que estar linkado a um id
+
+label coloca "nome"
+
+ex:
+<label for="email">Email</label>
+
+<input id="email"   type="email" placeholder="digite seu email">
+
+-->
+
+
+<!-- 
+
+    <input type="passaword">
+
+    - coloca uma senha de maneira segura
+    - esconde o que esta sendo digitado no campo
+    - o estilo da apresentação no campo, depende do User Agent
+
+    minlength - minimo
+    maxlength - maxlength
+    size - tamanho
+
+    pattern - expressoes regulares - limitando - padroes de segurança 
+
+    ex:
+    pattern="[0-9a-fA-F]{4,8}"
+    title - ajuda o usuario
+    placeholder colocar senha
+    disable - bloqueia
+
+    -     inputmode="numeric" teclado numerico -altera o tipo de teclado no smarthfone
+    Ex: quando queremos que o cliente use somente numeros
+    
+    autocomplete
+        *on permite a sugestao de: new passaword ou current-passaword
+        *off desabiliza a função de auto completar.
+        * new passaword o navegador pode sugerir nova senha
+
+        on- senha salva
+        off- digitar senha
+
+        current - senha salva no navegador
+
+ex:
+<form action="">
+
+    <input type="password"
+        autocomplete="off">
+    <button type="submit">Enviar</button>
+</form>
+
+    ##  email ##
+
+    valida se o valor digitado é um email
+
+    multiple - multiplos emails separados por virgula
+
+    minlenght/maxlenght - minimo e maximo 
+
+    type="email" - faz a validação
+
+    placeholder - pra saber que é o email dela
+
+    value - valor
+
+    disable - não permite escrever
+
+    required - OBRIGATORIO
+
+    pattern - conjunto de caracteres - regular - verifica se esta compativel com a sequencia ".+@ativainvestimentos\.com\.br"
+
+    __somente aceita se for o email citado acima "exemplo"
+
+    . significa qualquer informação
+    + mais informações
+    \. (aceitar o ponto do email especifico)
+
+    pode usar a tag "title para explicar"
+
+    ex: 
+    <form action="">
+    <input type="email"
+    pattern=".+@ativainvestimentos\.com\.br"
+    title="somente emails ativa"
+
+    >
+    <button type="submit">Enviar</button>
+
+    datalist - faz lista de emails
+
+    ----------------
+            ### URL
+
+    Atributos
+
+    placeholder
+    readonly / disabled
+    value
+
+    required
+
+    minlenght / maxlenght
+    value
+
+    pattern=".*\.com\.br\/." - somente .com.br
+
+
+    /////// file
+
+    value contem o arquivo a ser enviados
+    
+    files lista de arquivo ou arquivos
+
+    accept
+    descreve o tipo de arquivos serao enviados
+    ex: .doc .js .pdf .png ou image/* (todo tipo de img)
+
+
+    se for usar "file" tem que ter a seguinte estrutura:
+    <form action="" method="post" enctype="multipart/form-data">
+    <input type="file"
+    >
+</form>
+
+    type="color" - seleciona cor
+
+    <input type="color" value="#00ff00">
+
+    pode fazer datalist por
+
+    type="checkbox" - marcar ou desmarcar
+
+    checked (deixa marcado)
+
+//////////// hidden
+
+invisivel ao usuario
+sera enviado com o formulario 
+não recebera foco
+leitores na tela não percebem este campo 
+
+
+//////////// type="radio"
+
+seleciona uma unica opção de um grupo de opção
+
+////////// textearea
+rows e cols - tamanho da caixa
+
+wrap soft- embrulha texto dentro da caixa, com quebra de linha
+
+wrap="of" - (passa dos limites da caixa) sem quebra de linha  
+
+/////////select   
+controle que forcene menu de opções
+
+////////// option 
+contem as opções a serem selecionada
+atributos necessarios]
+valor
+
+
+///////////optgroup 
+agrupamento de varias opções
+
+seleciona mais de uma opção  
+
+////////search 
+para campos de busca 
+aria label - ajuda na acessibilidade
+
+
+
+
+
+
+-->
+
+
+
+<fieldset>
+    <legend>Escolha uma opção:</legend>
+<div>
+    <input type="checkbox" id="music" name="subscribe" v 
+>
+
+<label for="subscribe">Musicas</label>
+
+</div>
+
+<input type="checkbox" id="music" name="subscribe" v 
+>
+
+<label for="subscribe">Podcasts</label>
+
+</fieldset>
+
+<br>
+
+<label for="message"></label>
+<textarea></textarea>
+<br><br>
+
+
+<!-- search-->
+
+
+<datalist id="searchterms">
+<option>mac</option>
+<option>Linux</option>
+<option>Win</option>
+</datalist>
+
+
+<form action="">
+<input type="search" name="q" list="searchterms" placeholder="Digite seu termo de busca" size="25">
+
+<button>Pesquisar</button>
+<br><br>
+
+</form>
+
+
+<!--imput number
+entrada de numeros de numeros 
+- min/max
+- step
+
+<form action="">
+    <input type="number" placeholder="100"> 
+<button>Enviar</button>
+
+<form action="">
+    <input type="number" value="100" readonly> 
+<button>Enviar</button>
+
+-->
+
+<form action="">
+<input type="number" min="2" max="99">
+<button>Enviar</button>
+
+<form action="">
+    <input type="number" step="100">
+<button>Enviar</button>
+
+
+</form>
+<br><br>
+
+<!-- input type range -->
+
+<input type="range" min="-10" max="10" step="1">
+
+<!-- outros campos interessantes
+(mas que ainda não tem um otimo suporte)
+
+Ficar de olho no:  https://caniuse.com-->
+
+<br><br>
+<input type="date" value="2017-12-30">
+
+<br><br>
+<input type="datetime-local">
+
+<br><br>
+<input type="time">
+
+<br><br>
+<input type="month">
+
+<br><br>
+<input type="week">
+
+
